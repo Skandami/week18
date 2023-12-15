@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./style/todo.css">
+		<title>to-do list</title>
+        <style>
+            * {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  margin-block: 0;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  color: rgb(251, 219, 193);
+}
+
+.body {
+    background-color:darkslategrey;
+  background-size: cover;
+  min-height: 100vh;
+  height: 100%;
+  position: relative;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  margin: 0;
+  color: rgb(251, 219, 193);
+  padding: 2vw;
+}
+
+
+.list {
+  width: 35vw;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  padding: 1rem;
+}
+
+.task-input {
+    background-color:cornsilk;
+  width: 100%;
+  display: flex;
+  gap: 0.1rem;
+  color:black;
+}
+
+#input {
+    color: black;
+  font-size: 1rem;
+}
+
+.label {
+  padding: 1rem;
+}
+
+.input {
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+  flex-grow: 1;
+}
+
+
+.button {
+  background-color: orange;
+  border: 1px solid orangered;
+  padding: 0.1rem;
+  border-radius: 0.2rem;
+  font-size: 1rem;
+  color: rgb(11, 3, 56);
+  cursor: pointer;
+}
+
+
+
+.tasklist {
+    background-color:darkslategrey;;
+  width: 100%;
+  border: 1px solid orangered;
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.task {
+  border: 1px solid white;
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+  margin: 0.5rem auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.checkbox {
+  background-color: white;
+  appearance: none;
+  outline: 1px solid brown;
+  border-radius: 2px;
+  width: 14px;
+  height: 14px;
+  margin: auto 1vh;
+}
+
+
+.checkbox:checked {
+  background: orangered;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.clear {
+  width: 48%;
+}
+
+.clear:disabled {
+  background-color: gray;
+  border: none;
+}
+
+.completed {
+  background-color: orange;
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+  margin: 0.5rem auto;
+  text-align: center;
+  color: black;
+}
+</style>
+	</head>
+	<body class="body">
+        <div class="list">
+		<h1 class="title">Список дел &#128220; </h1>
+		<h2 class="label">Не забыть бы: </h2>
+		<div class="task-input">
+			<input type="text" id="input" maxlength="35" required placeholder="прогуляться под дождём" class="input"/>
+			<button class="button" id="buttonAdd">добавить</button>
+		</div>
+        
+		<div class="tasklist">
+		<div class="tasks" id="tasks">
+			<div class="completed" id="completed">Никаких дел нет!</div>
+		</div></div>
+		<div class="button-container">
+		<button class="button clear" id="buttonClearAll" disabled>очистить список</button>
+		<button class="button clear" id="buttonClearDone" disabled>удалить выполненные</button>
+	</div>
+</div>
+    <script src="/todoList.js"></script>
+	</body>
+</html>
